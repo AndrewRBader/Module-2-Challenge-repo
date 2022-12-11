@@ -7,6 +7,8 @@ Example:
     $ python app.py
 """
 import sys
+# adding the csv library to this application
+import csv
 import fire
 import questionary
 from pathlib import Path
@@ -101,6 +103,20 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     return bank_data_filtered
 
+# function that saves qualifying data as a file
+def save_csv(qualifying_loans):
+    # Set the output header
+    header = ['Lender', 'Max Loan Amount', 'Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
+
+    # Set the output file path
+    output_path = Path("qualifying_loans.csv")
+
+    with open(output_path, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(header)
+        
+        for loan in qualifying_loans:
+            csvwriter.writerow(loan.values())
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -111,6 +127,8 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
 
+    # invoking save csv file, integrating save_csv file into application
+    save_csv(qualifying_loans)
 
 def run():
     """The main function for running the script."""
