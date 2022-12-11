@@ -114,8 +114,24 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
 
-    # invoking save csv file, integrating save_csv function into application
-    save_csv(qualifying_loans)
+    # prompted asking if client wants to save CSV
+    answer = questionary.text("Would you like to save your qualifying loans as a CSV? (yes/no)").ask()
+    # Responses to prompts
+    message_saved = "your qualifying loans CSV has been saved"
+    message_no_qualifying_loans = "You do not qualify for any loans"
+    message_no_csv = "No CSV has been saved"
+
+    # conditional depending on client's selection
+    if answer == 'yes':
+        if len(qualifying_loans) != 0:
+        # invoking save csv file, integrating save_csv function into application
+            save_csv(qualifying_loans)
+            print(message_saved)
+        else:
+            print(message_no_qualifying_loans)
+    
+    else:
+        print(message_no_csv)
 
 def run():
     """The main function for running the script."""
