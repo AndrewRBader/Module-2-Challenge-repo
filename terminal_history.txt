@@ -1,0 +1,46 @@
+** for some reason history 50 > terminal_history.txt is in the challenge directory prints my whole terminal history. Just kept the terminal commands for the challenge!**
+
+10415* cd module2_challenge
+10416* ls
+10417* cd Module-2-Challenge-repo
+10418* git add .
+10419* git commit -m "first commit"
+10420* git push origin main
+10421  git add .
+10422  git commit -m "finished readme"
+10423  git push origin main]
+10424  git push origin main
+10425* ls
+10426* open .
+10427* ls
+10428* cd Starter_Code
+10429* code .
+10430  git add .
+10431  git commit -m "added starter code"
+10432  git push origin main
+10433  git add .
+10434  git commit -m "added save_csv function"
+10435  git push origin main
+10436  git commit -m "system design implemented, save_CSV in fileio.py"
+10437  git push origin main
+10438  git add .
+10439  git commit -m "fixed comments"
+10440  git push origin main
+10441* cd ..
+10442* ls
+10443* cd Module-2-Challenge-repo
+10444* ls
+10445* python app.py
+10446  git add .
+10447  git commit -m "save_qualifying_loans function update app.py"
+10448  git push origin main
+10449* python app.py
+10450  git add .
+10451  git commit -m "tested csv generation, works great
+10452  git commit -m "tested csv generation, works great"
+10453  git status
+10454  history 50 > terminal_history.txt
+10455  git add .
+10456  git commit -m "updated readme"
+10457  git push origin dev
+10458  git push origin main
