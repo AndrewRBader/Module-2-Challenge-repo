@@ -34,33 +34,33 @@ When the qualifier is ran, the tool prompts the user to save the results as a CS
 Modules and Directories:
 app.py: the primary application file. The save_qualifying_loans function is here:
 
-def save_qualifying_loans(qualifying_loans):
-    """Saves the qualifying loans to a CSV file.
+    def save_qualifying_loans(qualifying_loans):
+        """Saves the qualifying loans to a CSV file.
 
-    Args:
-        qualifying_loans (list of lists): The qualifying bank loans.
-    """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+        Args:
+            qualifying_loans (list of lists): The qualifying bank loans.
+        """
+        # @TODO: Complete the usability dialog for savings the CSV Files.
+        # YOUR CODE HERE!
 
-    # prompted asking if client wants to save CSV
-    answer = questionary.text("Would you like to save your qualifying loans as a CSV? (yes/no)").ask()
-    # Responses to prompts
-    message_saved = "your qualifying loans CSV has been saved"
-    message_no_qualifying_loans = "You do not qualify for any loans"
-    message_no_csv = "No CSV has been saved"
+        # prompted asking if client wants to save CSV
+        answer = questionary.text("Would you like to save your qualifying loans as a CSV? (yes/no)").ask()
+        # Responses to prompts
+        message_saved = "your qualifying loans CSV has been saved"
+        message_no_qualifying_loans = "You do not qualify for any loans"
+        message_no_csv = "No CSV has been saved"
 
-    # conditional depending on client's selection
-    if answer == 'yes':
-        if len(qualifying_loans) != 0:
-        # invoking save csv file, integrating save_csv function into application
-            save_csv(qualifying_loans)
-            print(message_saved)
-        else:
-            print(message_no_qualifying_loans)
+        # conditional depending on client's selection
+        if answer == 'yes':
+            if len(qualifying_loans) != 0:
+            # invoking save csv file, integrating save_csv function into application
+                save_csv(qualifying_loans)
+                print(message_saved)
+            else:
+                print(message_no_qualifying_loans)
     
-    else:
-        print(message_no_csv)
+        else:
+            print(message_no_csv)
 
 data directory: includes the CSV file
 qualifier folder: contains functions imported into the main app
@@ -69,19 +69,19 @@ filters: directory that contains .py files for filter functions
 utils: includes financial calculator module and fileio module
     the fileio.py file in this directory has the save_csv function:
 
-def save_csv(qualifying_loans):
-    # Set the output header
-    header = ['Lender', 'Max Loan Amount', 'Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
+    def save_csv(qualifying_loans):
+        # Set the output header
+        header = ['Lender', 'Max Loan Amount', 'Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
 
-    # Set the output file path
-    output_path = Path("qualifying_loans.csv")
+        # Set the output file path
+        output_path = Path("qualifying_loans.csv")
 
-    with open(output_path, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(header)
+        with open(output_path, 'w', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(header)
         
-        for loan in qualifying_loans:
-            csvwriter.writerow(loan)
+            for loan in qualifying_loans:
+                csvwriter.writerow(loan)
 
 Usage screen shots:
 1) Go through prompts and answer questions about income, debt, etc.
