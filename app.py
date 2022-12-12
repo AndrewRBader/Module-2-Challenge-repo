@@ -7,7 +7,6 @@ Example:
     $ python app.py
 """
 import sys
-# adding the csv library to this application
 import fire
 import questionary
 from pathlib import Path
