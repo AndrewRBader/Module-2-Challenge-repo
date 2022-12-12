@@ -38,6 +38,17 @@ qualifier folder: contains functions imported into the main app
 filters: directory that contains .py files for filter functions
 utils: includes financial calculator module and fileio module
 
+1) Go through prompts and answer questions about income, debt, etc.
+![loan tool prompts](assets/image-1.png "Loan Qualifier Prompts")
+2) Chose yes/no for the save CSV prompt
+![save CSV prompt](assets/image-2.png "Save loan CSV Prompt")
+3a) If chose yes, find CSV in directory root
+![new CSV file](assets/image-3.png "New CSV File")
+3b) If chose no, program exits
+![don't save CSV](assets/image-4.png "don't save CSV")
+3c) If client doesn't qualify for loan
+![don't qualify](assets/image-5.png "don't qualify")
+
 ---
 
 ## Contributors
